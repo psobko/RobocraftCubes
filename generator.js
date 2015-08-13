@@ -18,7 +18,7 @@ APP.JSON = {
   convertObjectToJSON: function(object){
     console.log(JSON.stringify(object));
   },
-  convertTableDataToJSON : function)
+  // convertTableDataToJSON : function)
 }
 
 APP.table = {
@@ -96,7 +96,7 @@ APP.table = {
     $("#cubeTable thead input").click(function (e) {
       if($(this).prop('checked'))
       {
-        APP.table.selectedRows = APP.table.table.find('tbody td');
+        APP.table.selectedRows = APP.table.table.find('tbody tr');
         APP.table.table.find('input[type=checkbox]').prop("checked", true);
       }
       else
@@ -107,12 +107,12 @@ APP.table = {
     });
   },
   addColumn: function() {
-    for(tableRow in this.table.find('tr')) {
+    for(var tableRow in this.table.find('tr')) {
       $('<td/>').attr('tabindex','1').appendTo(tableRow);
     }
   },
   deleteColumn: function() {
-    for(tableRow in this.table.find('tr')) {
+    for(var tableRow in this.table.find('tr')) {
       tableRow.find('td').eq(this.selectedCol).remove();
     }
     this.selectedCol = undefined;
@@ -132,11 +132,18 @@ APP.table = {
     this.selectedRow.remove();
     this.selectedRow = undefined;
   },
-  deleteRows : function(indexes) {
-    for (var i = 0; i < indexes.length; i++) {
-      this.table.find('tbody').find('tr').eq(index).remove();
+  deleteSelectedRows : function() {
+    // row.remove();
+    // console.log(this.selectedRows);
+    for( row in this.selectedRows) {
+      // console.log(row);
+      $(row).remove();
     }
-        this.selectedRow = undefined;
+    this.table.find('thead input').prop('checked', false);
+    // for (var i = 0; i < indexes.length; i++) {
+    //   this.table.find('tbody').find('tr').eq(index).remove();
+    // }
+    this.selectedRows = new Array();
   }
 }
 

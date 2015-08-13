@@ -111,13 +111,15 @@ function addTableControl(title, action)
                 .appendTo($('#tableControls'));
 }
 
-addTableControl('Insert Row', function(){
+addTableControl('Insert Row', function() {
   APP.table.insertRow();
  });
-addTableControl('Delete Row', function(){ 
+addTableControl('Delete Row', function() { 
   APP.table.deleteRow();
 });
-addTableControl('Delete All Selected', function(){ });
+addTableControl('Delete All Selected', function() {
+  APP.table.deleteSelectedRows();
+ });
 addTableControl('Insert Col', function(){ });
 addTableControl('Delete Col', function(){ });
 

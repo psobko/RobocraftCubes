@@ -1,0 +1,3322 @@
+var parts = [
+  {
+    "name":"Light Chassis Cube",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":5,
+    "armor":50,
+    "cost":0,
+    "shape":0
+  },
+  {
+    "name":"Light Chassis Prism",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":2.5,
+    "armor":50,
+    "cost":2,
+    "shape":1
+  },
+  {
+    "name":"Light Chassis Tetra",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":1.65,
+    "armor":50,
+    "cost":2,
+    "shape":2
+  },
+  {
+    "name":"Light Chassis Inner",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":3.35,
+    "armor":50,
+    "cost":2,
+    "shape":3
+  },
+  {
+    "name":"Heavy Chassis Cube",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":15,
+    "armor":50,
+    "cost":3,
+    "shape":0
+  },
+  {
+    "name":"Heavy Chassis Prism",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":7.5,
+    "armor":50,
+    "cost":3,
+    "shape":1
+  },
+  {
+    "name":"Heavy Chassis Tetra",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":4.95,
+    "armor":50,
+    "cost":3,
+    "shape":2
+  },
+  {
+    "name":"Heavy Chassis Inner",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":10.05,
+    "armor":50,
+    "cost":3,
+    "shape":3
+  },
+  {
+    "name":"Windshield Cube",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":5,
+    "armor":50,
+    "cost":8,
+    "shape":0
+  },
+  {
+    "name":"Windshield Prism",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":4,
+    "armor":50,
+    "cost":8,
+    "shape":1
+  },
+  {
+    "name":"Windshield Tetra",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":3,
+    "armor":50,
+    "cost":8,
+    "shape":2
+  },
+  {
+    "name":"Windshield Inner",
+    "type":0,
+    "tier":0,
+    "flops":1,
+    "mass":3.35,
+    "armor":50,
+    "cost":8,
+    "shape":3
+  },
+  {
+    "name":"Armored Cube T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":6,
+    "armor":105,
+    "cost":8,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":3,
+    "armor":100,
+    "cost":8,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":2,
+    "armor":97,
+    "cost":8,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":4,
+    "armor":102,
+    "cost":8,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":3,
+    "armor":100,
+    "cost":8,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":2,
+    "armor":97,
+    "cost":8,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T1",
+    "type":0,
+    "tier":1,
+    "flops":1,
+    "mass":4,
+    "armor":102,
+    "cost":8,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":7,
+    "armor":163,
+    "cost":32,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":3.5,
+    "armor":155,
+    "cost":32,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":2.3,
+    "armor":151,
+    "cost":32,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":4.7,
+    "armor":159,
+    "cost":32,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":3.5,
+    "armor":155,
+    "cost":32,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":2.3,
+    "armor":151,
+    "cost":32,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T2",
+    "type":0,
+    "tier":2,
+    "flops":1,
+    "mass":4.7,
+    "armor":159,
+    "cost":32,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":8,
+    "armor":242,
+    "cost":84,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":4,
+    "armor":231,
+    "cost":84,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":2.6,
+    "armor":225,
+    "cost":84,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":5.4,
+    "armor":237,
+    "cost":84,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":4,
+    "armor":231,
+    "cost":84,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":2.6,
+    "armor":225,
+    "cost":84,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":5.4,
+    "armor":237,
+    "cost":84,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":9,
+    "armor":347,
+    "cost":188,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":4.5,
+    "armor":330,
+    "cost":188,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":3,
+    "armor":322,
+    "cost":188,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":6,
+    "armor":338,
+    "cost":188,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":4.5,
+    "armor":330,
+    "cost":188,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":3,
+    "armor":322,
+    "cost":188,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":6,
+    "armor":338,
+    "cost":188,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":10,
+    "armor":475,
+    "cost":412,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":5,
+    "armor":452,
+    "cost":412,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":3.3,
+    "armor":441,
+    "cost":412,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":6.7,
+    "armor":464,
+    "cost":412,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":5,
+    "armor":452,
+    "cost":412,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":3.3,
+    "armor":441,
+    "cost":412,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":6.7,
+    "armor":464,
+    "cost":412,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":11,
+    "armor":622,
+    "cost":816,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":5.5,
+    "armor":592,
+    "cost":816,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":3.6,
+    "armor":578,
+    "cost":816,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":7.4,
+    "armor":607,
+    "cost":816,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":5.5,
+    "armor":592,
+    "cost":816,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":3.6,
+    "armor":578,
+    "cost":816,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T6",
+    "type":0,
+    "tier":6,
+    "flops":1,
+    "mass":7.4,
+    "armor":607,
+    "cost":816,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":12,
+    "armor":778,
+    "cost":1520,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":6,
+    "armor":741,
+    "cost":1520,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":4,
+    "armor":722,
+    "cost":1520,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":8,
+    "armor":759,
+    "cost":1520,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":6,
+    "armor":741,
+    "cost":1520,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":4,
+    "armor":722,
+    "cost":1520,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T7",
+    "type":0,
+    "tier":7,
+    "flops":1,
+    "mass":8,
+    "armor":759,
+    "cost":1520,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":13,
+    "armor":926,
+    "cost":2952,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":6.5,
+    "armor":881,
+    "cost":2952,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":4.3,
+    "armor":859,
+    "cost":2952,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":8.7,
+    "armor":904,
+    "cost":2952,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":6.5,
+    "armor":926,
+    "cost":2952,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":4.3,
+    "armor":881,
+    "cost":2952,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T8",
+    "type":0,
+    "tier":8,
+    "flops":1,
+    "mass":8.7,
+    "armor":859,
+    "cost":2952,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":14,
+    "armor":1046,
+    "cost":5256,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":7,
+    "armor":996,
+    "cost":5256,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":4.6,
+    "armor":971,
+    "cost":5256,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":9.4,
+    "armor":1021,
+    "cost":5256,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":7,
+    "armor":996,
+    "cost":5256,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":4.6,
+    "armor":971,
+    "cost":5256,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T9",
+    "type":0,
+    "tier":9,
+    "flops":1,
+    "mass":9.4,
+    "armor":1021,
+    "cost":5256,
+    "shape":6
+  },
+  {
+    "name":"Armored Cube T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":9588,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":9588,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":9588,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":9588,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":9588,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":9588,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":9588,
+    "shape":6
+  },
+  {
+    "name":"Halloween Cube T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":9588,
+    "shape":0
+  },
+  {
+    "name":"Halloween Prism T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":9588,
+    "shape":1
+  },
+  {
+    "name":"Halloween Tetra T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":9588,
+    "shape":2
+  },
+  {
+    "name":"Halloween Inner T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":9588,
+    "shape":3
+  },
+  {
+    "name":"Armored Cube TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":3,
+    "armor":1567,
+    "cost":19176,
+    "shape":0
+  },
+  {
+    "name":"Armored Prism TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":1.5,
+    "armor":1492,
+    "cost":19176,
+    "shape":1
+  },
+  {
+    "name":"Armored Tetra TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":1,
+    "armor":1454,
+    "cost":19176,
+    "shape":2
+  },
+  {
+    "name":"Armored Inner TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":2,
+    "armor":1529,
+    "cost":19176,
+    "shape":3
+  },
+  {
+    "name":"Armored Prism Round TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":1.5,
+    "armor":1492,
+    "cost":19176,
+    "shape":4
+  },
+  {
+    "name":"Armored Tetra Round TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":1,
+    "armor":1454,
+    "cost":19176,
+    "shape":5
+  },
+  {
+    "name":"Armored Inner Round TX-1",
+    "type":0,
+    "tier":11,
+    "flops":3,
+    "mass":2,
+    "armor":1529,
+    "cost":19176,
+    "shape":6
+  },
+  {
+    "name":"Armored Helium T4",
+    "type":0,
+    "tier":4,
+    "flops":12,
+    "mass":0,
+    "armor":291,
+    "cost":1354,
+    "shape":null
+  },
+  {
+    "name":"Armored Helium T6",
+    "type":0,
+    "tier":6,
+    "flops":14,
+    "mass":0,
+    "armor":533,
+    "cost":4974,
+    "shape":null
+  },
+  {
+    "name":"Armored Helium T8",
+    "type":0,
+    "tier":8,
+    "flops":16,
+    "mass":0,
+    "armor":820,
+    "cost":17228,
+    "shape":null
+  },
+  {
+    "name":"Armored Helium T10",
+    "type":0,
+    "tier":10,
+    "flops":18,
+    "mass":0,
+    "armor":1043,
+    "cost":11985,
+    "shape":null
+  },
+  {
+    "name":"Wolf Cube T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":10,
+    "armor":402,
+    "cost":515,
+    "shape":null
+  },
+  {
+    "name":"Wolf Inner T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":6.7,
+    "armor":402,
+    "cost":515,
+    "shape":null
+  },
+  {
+    "name":"Wolf Prism T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":5,
+    "armor":402,
+    "cost":515,
+    "shape":null
+  },
+  {
+    "name":"Wolf Tetra T5",
+    "type":0,
+    "tier":5,
+    "flops":1,
+    "mass":3.33,
+    "armor":402,
+    "cost":515,
+    "shape":null
+  },
+  {
+    "name":"Quarterback Cube T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":9,
+    "armor":291,
+    "cost":285,
+    "shape":null
+  },
+  {
+    "name":"Quarterback Prism T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":4.5,
+    "armor":291,
+    "cost":285,
+    "shape":null
+  },
+  {
+    "name":"Quarterback Inner T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":6.03,
+    "armor":291,
+    "cost":285,
+    "shape":null
+  },
+  {
+    "name":"Quarterback Tetra T4",
+    "type":0,
+    "tier":4,
+    "flops":1,
+    "mass":2.97,
+    "armor":291,
+    "cost":285,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Cube T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":8,
+    "armor":203,
+    "cost":105,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Prism T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":4,
+    "armor":203,
+    "cost":105,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Tetra T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":2.97,
+    "armor":203,
+    "cost":105,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Inner T3",
+    "type":0,
+    "tier":3,
+    "flops":1,
+    "mass":5.36,
+    "armor":203,
+    "cost":105,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6-6 B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6-6 O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6 B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Inner T10 C6 B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Prism T10 C6 B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Tetra T10 C6 B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6 Carbon B",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6 Carbon O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Cube T10 C6 O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":15,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Inner T10 C6 O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Prism T10 C6 O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Armored Tetra T10 C6 O",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Inner C6 B Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Prism C6 B Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Tetra C6 B Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Inner C6 O Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":10.1,
+    "armor":1092,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Prism C6 O Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":7.5,
+    "armor":1066,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Tetra C6 O Round T10",
+    "type":0,
+    "tier":10,
+    "flops":1,
+    "mass":5,
+    "armor":1039,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Wheel T1",
+    "type":1,
+    "tier":1,
+    "flops":20,
+    "mass":200,
+    "armor":210,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T1",
+    "type":1,
+    "tier":1,
+    "flops":21,
+    "mass":200,
+    "armor":210,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Wheel T2",
+    "type":1,
+    "tier":2,
+    "flops":21,
+    "mass":244,
+    "armor":395,
+    "cost":265,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T2",
+    "type":1,
+    "tier":2,
+    "flops":22,
+    "mass":244,
+    "armor":395,
+    "cost":265,
+    "shape":null
+  },
+  {
+    "name":"Wheel T3",
+    "type":1,
+    "tier":3,
+    "flops":22,
+    "mass":289,
+    "armor":712,
+    "cost":685,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T3",
+    "type":1,
+    "tier":3,
+    "flops":23,
+    "mass":289,
+    "armor":712,
+    "cost":685,
+    "shape":null
+  },
+  {
+    "name":"Wheel T4",
+    "type":1,
+    "tier":4,
+    "flops":23,
+    "mass":333,
+    "armor":1235,
+    "cost":1555,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T4",
+    "type":1,
+    "tier":4,
+    "flops":24,
+    "mass":333,
+    "armor":1235,
+    "cost":1555,
+    "shape":null
+  },
+  {
+    "name":"Wheel T5",
+    "type":1,
+    "tier":5,
+    "flops":24,
+    "mass":378,
+    "armor":2050,
+    "cost":3385,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T5",
+    "type":1,
+    "tier":5,
+    "flops":25,
+    "mass":378,
+    "armor":2050,
+    "cost":3385,
+    "shape":null
+  },
+  {
+    "name":"Wheel T6",
+    "type":1,
+    "tier":6,
+    "flops":25,
+    "mass":422,
+    "armor":3255,
+    "cost":6685,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T6",
+    "type":1,
+    "tier":6,
+    "flops":26,
+    "mass":422,
+    "armor":3255,
+    "cost":6685,
+    "shape":null
+  },
+  {
+    "name":"Wheel T7",
+    "type":1,
+    "tier":7,
+    "flops":26,
+    "mass":467,
+    "armor":4932,
+    "cost":12435,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T7",
+    "type":1,
+    "tier":7,
+    "flops":27,
+    "mass":467,
+    "armor":4932,
+    "cost":12435,
+    "shape":null
+  },
+  {
+    "name":"Wheel T8",
+    "type":1,
+    "tier":8,
+    "flops":27,
+    "mass":511,
+    "armor":7113,
+    "cost":24195,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T8",
+    "type":1,
+    "tier":8,
+    "flops":28,
+    "mass":511,
+    "armor":7113,
+    "cost":24195,
+    "shape":null
+  },
+  {
+    "name":"Wheel T9",
+    "type":1,
+    "tier":9,
+    "flops":28,
+    "mass":556,
+    "armor":9741,
+    "cost":43070,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T9",
+    "type":1,
+    "tier":9,
+    "flops":29,
+    "mass":556,
+    "armor":9741,
+    "cost":43070,
+    "shape":null
+  },
+  {
+    "name":"Wheel T10",
+    "type":1,
+    "tier":10,
+    "flops":29,
+    "mass":600,
+    "armor":12633,
+    "cost":78560,
+    "shape":null
+  },
+  {
+    "name":"Wheel Steering T10",
+    "type":1,
+    "tier":10,
+    "flops":30,
+    "mass":600,
+    "armor":12633,
+    "cost":78560,
+    "shape":null
+  },
+  {
+    "name":"Mega Wheel TX-1",
+    "type":1,
+    "tier":11,
+    "flops":200,
+    "mass":11150,
+    "armor":30591,
+    "cost":832505,
+    "shape":null
+  },
+  {
+    "name":"Mega Wheel Steering TX-1",
+    "type":1,
+    "tier":11,
+    "flops":200,
+    "mass":11150,
+    "armor":30591,
+    "cost":832505,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T2",
+    "type":1,
+    "tier":2,
+    "flops":21,
+    "mass":5,
+    "armor":214,
+    "cost":278,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T3",
+    "type":1,
+    "tier":3,
+    "flops":22,
+    "mass":7.5,
+    "armor":434,
+    "cost":719,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T4",
+    "type":1,
+    "tier":4,
+    "flops":23,
+    "mass":7.5,
+    "armor":801,
+    "cost":1633,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T5",
+    "type":1,
+    "tier":5,
+    "flops":24,
+    "mass":10,
+    "armor":1372,
+    "cost":3554,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T6",
+    "type":1,
+    "tier":6,
+    "flops":25,
+    "mass":10,
+    "armor":2200,
+    "cost":7019,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T7",
+    "type":1,
+    "tier":7,
+    "flops":26,
+    "mass":12.5,
+    "armor":3319,
+    "cost":13057,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T8",
+    "type":1,
+    "tier":8,
+    "flops":27,
+    "mass":12.5,
+    "armor":4723,
+    "cost":25405,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T9",
+    "type":1,
+    "tier":9,
+    "flops":28,
+    "mass":15,
+    "armor":6348,
+    "cost":45224,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade T10",
+    "type":1,
+    "tier":10,
+    "flops":29,
+    "mass":15,
+    "armor":8058,
+    "cost":82488,
+    "shape":null
+  },
+  {
+    "name":"Hover Blade TX-1",
+    "type":1,
+    "tier":11,
+    "flops":200,
+    "mass":50,
+    "armor":17417,
+    "cost":838505,
+    "shape":null
+  },
+  {
+    "name":"Thruster T1",
+    "type":1,
+    "tier":1,
+    "flops":10,
+    "mass":5,
+    "armor":88,
+    "cost":80,
+    "shape":null
+  },
+  {
+    "name":"Thruster T2",
+    "type":1,
+    "tier":2,
+    "flops":11,
+    "mass":5,
+    "armor":214,
+    "cost":292,
+    "shape":null
+  },
+  {
+    "name":"Thruster T3",
+    "type":1,
+    "tier":3,
+    "flops":12,
+    "mass":7.5,
+    "armor":434,
+    "cost":754,
+    "shape":null
+  },
+  {
+    "name":"Thruster T4",
+    "type":1,
+    "tier":4,
+    "flops":13,
+    "mass":7.5,
+    "armor":801,
+    "cost":1711,
+    "shape":null
+  },
+  {
+    "name":"Thruster T5",
+    "type":1,
+    "tier":5,
+    "flops":14,
+    "mass":10,
+    "armor":1372,
+    "cost":3724,
+    "shape":null
+  },
+  {
+    "name":"Thruster T6",
+    "type":1,
+    "tier":6,
+    "flops":15,
+    "mass":10,
+    "armor":2200,
+    "cost":7354,
+    "shape":null
+  },
+  {
+    "name":"Thruster T7",
+    "type":1,
+    "tier":7,
+    "flops":16,
+    "mass":12.5,
+    "armor":3319,
+    "cost":13679,
+    "shape":null
+  },
+  {
+    "name":"Thruster T8",
+    "type":1,
+    "tier":8,
+    "flops":17,
+    "mass":12.5,
+    "armor":4723,
+    "cost":26615,
+    "shape":null
+  },
+  {
+    "name":"Thruster T9",
+    "type":1,
+    "tier":9,
+    "flops":18,
+    "mass":15,
+    "armor":6348,
+    "cost":47377,
+    "shape":null
+  },
+  {
+    "name":"Thruster T10",
+    "type":1,
+    "tier":10,
+    "flops":19,
+    "mass":15,
+    "armor":8058,
+    "cost":86416,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T4",
+    "type":1,
+    "tier":4,
+    "flops":23,
+    "mass":7.5,
+    "armor":1029,
+    "cost":2950,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T5",
+    "type":1,
+    "tier":5,
+    "flops":24,
+    "mass":10,
+    "armor":1709,
+    "cost":4062,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T6",
+    "type":1,
+    "tier":6,
+    "flops":25,
+    "mass":10,
+    "armor":3587,
+    "cost":8022,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T7",
+    "type":1,
+    "tier":7,
+    "flops":26,
+    "mass":12.5,
+    "armor":4110,
+    "cost":14922,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T8",
+    "type":1,
+    "tier":8,
+    "flops":27,
+    "mass":12.5,
+    "armor":7085,
+    "cost":29034,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T9",
+    "type":1,
+    "tier":9,
+    "flops":28,
+    "mass":15,
+    "armor":9522,
+    "cost":51684,
+    "shape":null
+  },
+  {
+    "name":"Aerofoil T10",
+    "type":1,
+    "tier":10,
+    "flops":29,
+    "mass":15,
+    "armor":12087,
+    "cost":94272,
+    "shape":null
+  },
+  {
+    "name":"Rudder T4",
+    "type":1,
+    "tier":4,
+    "flops":20,
+    "mass":7.5,
+    "armor":1029,
+    "cost":2835,
+    "shape":null
+  },
+  {
+    "name":"Rudder T5",
+    "type":1,
+    "tier":5,
+    "flops":21,
+    "mass":5,
+    "armor":1709,
+    "cost":3859,
+    "shape":null
+  },
+  {
+    "name":"Rudder T6",
+    "type":1,
+    "tier":6,
+    "flops":22,
+    "mass":5,
+    "armor":2713,
+    "cost":7621,
+    "shape":null
+  },
+  {
+    "name":"Rudder T7",
+    "type":1,
+    "tier":7,
+    "flops":23,
+    "mass":5,
+    "armor":4110,
+    "cost":14176,
+    "shape":null
+  },
+  {
+    "name":"Rudder T8",
+    "type":1,
+    "tier":8,
+    "flops":24,
+    "mass":5,
+    "armor":7085,
+    "cost":27582,
+    "shape":null
+  },
+  {
+    "name":"Rudder T9",
+    "type":1,
+    "tier":9,
+    "flops":25,
+    "mass":5,
+    "armor":9522,
+    "cost":49100,
+    "shape":null
+  },
+  {
+    "name":"Rudder T10",
+    "type":1,
+    "tier":10,
+    "flops":26,
+    "mass":5,
+    "armor":12087,
+    "cost":89558,
+    "shape":null
+  },
+  {
+    "name":"Walker Leg T7",
+    "type":1,
+    "tier":7,
+    "flops":40,
+    "mass":50,
+    "armor":9958,
+    "cost":15668,
+    "shape":null
+  },
+  {
+    "name":"Walker Leg T8",
+    "type":1,
+    "tier":8,
+    "flops":42,
+    "mass":50,
+    "armor":14170,
+    "cost":30486,
+    "shape":null
+  },
+  {
+    "name":"Walker Leg T9",
+    "type":1,
+    "tier":9,
+    "flops":44,
+    "mass":50,
+    "armor":19044,
+    "cost":54268,
+    "shape":null
+  },
+  {
+    "name":"Walker Leg T10",
+    "type":1,
+    "tier":10,
+    "flops":46,
+    "mass":50,
+    "armor":24174,
+    "cost":98986,
+    "shape":null
+  },
+  {
+    "name":"Wolf Leg T7",
+    "type":1,
+    "tier":7,
+    "flops":40,
+    "mass":50,
+    "armor":9958,
+    "cost":11751,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T3",
+    "type":1,
+    "tier":3,
+    "flops":34,
+    "mass":7500,
+    "armor":1484,
+    "cost":935,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T4",
+    "type":1,
+    "tier":4,
+    "flops":36,
+    "mass":11786,
+    "armor":2572,
+    "cost":2120,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T5",
+    "type":1,
+    "tier":5,
+    "flops":38,
+    "mass":16071,
+    "armor":4271,
+    "cost":4605,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T6",
+    "type":1,
+    "tier":6,
+    "flops":40,
+    "mass":20357,
+    "armor":6782,
+    "cost":9080,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T7",
+    "type":1,
+    "tier":7,
+    "flops":42,
+    "mass":24643,
+    "armor":10274,
+    "cost":16885,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T8",
+    "type":1,
+    "tier":8,
+    "flops":44,
+    "mass":28929,
+    "armor":14818,
+    "cost":32830,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T9",
+    "type":1,
+    "tier":9,
+    "flops":46,
+    "mass":33214,
+    "armor":20295,
+    "cost":58420,
+    "shape":null
+  },
+  {
+    "name":"Caterpillar Track T10",
+    "type":1,
+    "tier":10,
+    "flops":48,
+    "mass":37500,
+    "armor":26319,
+    "cost":106525,
+    "shape":null
+  },
+  {
+    "name":"Ski T5",
+    "type":1,
+    "tier":5,
+    "flops":25,
+    "mass":10,
+    "armor":1170,
+    "cost":3385,
+    "shape":null
+  },
+  {
+    "name":"Stearing Ski T5",
+    "type":1,
+    "tier":5,
+    "flops":25,
+    "mass":10,
+    "armor":1170,
+    "cost":3385,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T5",
+    "type":1,
+    "tier":5,
+    "flops":30,
+    "mass":10,
+    "armor":2563,
+    "cost":4375,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T6",
+    "type":1,
+    "tier":6,
+    "flops":31,
+    "mass":12.5,
+    "armor":4069,
+    "cost":8625,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T7",
+    "type":1,
+    "tier":7,
+    "flops":33,
+    "mass":15,
+    "armor":6165,
+    "cost":16040,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T8",
+    "type":1,
+    "tier":8,
+    "flops":34,
+    "mass":17.5,
+    "armor":8891,
+    "cost":31190,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T9",
+    "type":1,
+    "tier":9,
+    "flops":35,
+    "mass":20,
+    "armor":12177,
+    "cost":55500,
+    "shape":null
+  },
+  {
+    "name":"Rotor Blade T10",
+    "type":1,
+    "tier":10,
+    "flops":36,
+    "mass":22.5,
+    "armor":15791,
+    "cost":101200,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T1",
+    "type":2,
+    "tier":1,
+    "flops":10,
+    "mass":5,
+    "armor":300,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T2",
+    "type":2,
+    "tier":2,
+    "flops":12,
+    "mass":5,
+    "armor":534,
+    "cost":329,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T3",
+    "type":2,
+    "tier":3,
+    "flops":14,
+    "mass":7.5,
+    "armor":1084,
+    "cost":842,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T4",
+    "type":2,
+    "tier":4,
+    "flops":16,
+    "mass":7.5,
+    "armor":2003,
+    "cost":1908,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T5",
+    "type":2,
+    "tier":5,
+    "flops":18,
+    "mass":10,
+    "armor":3431,
+    "cost":4145,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T6",
+    "type":2,
+    "tier":6,
+    "flops":20,
+    "mass":10,
+    "armor":5501,
+    "cost":8172,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T7",
+    "type":2,
+    "tier":7,
+    "flops":22,
+    "mass":12.5,
+    "armor":8298,
+    "cost":15197,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T8",
+    "type":2,
+    "tier":8,
+    "flops":24,
+    "mass":12.5,
+    "armor":11809,
+    "cost":29547,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T9",
+    "type":2,
+    "tier":9,
+    "flops":26,
+    "mass":15,
+    "armor":15871,
+    "cost":52578,
+    "shape":null
+  },
+  {
+    "name":"Front Mount SMG T10",
+    "type":2,
+    "tier":10,
+    "flops":28,
+    "mass":15,
+    "armor":20146,
+    "cost":95873,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T1",
+    "type":2,
+    "tier":1,
+    "flops":10,
+    "mass":5,
+    "armor":300,
+    "cost":100,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T2",
+    "type":2,
+    "tier":2,
+    "flops":12,
+    "mass":5,
+    "armor":534,
+    "cost":365,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T3",
+    "type":2,
+    "tier":3,
+    "flops":14,
+    "mass":7.5,
+    "armor":1084,
+    "cost":935,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T4",
+    "type":2,
+    "tier":4,
+    "flops":16,
+    "mass":7.5,
+    "armor":2003,
+    "cost":2120,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T5",
+    "type":2,
+    "tier":5,
+    "flops":18,
+    "mass":10,
+    "armor":3431,
+    "cost":4605,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T6",
+    "type":2,
+    "tier":6,
+    "flops":20,
+    "mass":10,
+    "armor":5501,
+    "cost":9080,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T7",
+    "type":2,
+    "tier":7,
+    "flops":22,
+    "mass":12.5,
+    "armor":8298,
+    "cost":16885,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T8",
+    "type":2,
+    "tier":8,
+    "flops":24,
+    "mass":12.5,
+    "armor":11809,
+    "cost":32830,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T9",
+    "type":2,
+    "tier":9,
+    "flops":26,
+    "mass":15,
+    "armor":15871,
+    "cost":58420,
+    "shape":null
+  },
+  {
+    "name":"Top Mount SMG T10",
+    "type":2,
+    "tier":10,
+    "flops":28,
+    "mass":15,
+    "armor":20146,
+    "cost":106525,
+    "shape":null
+  },
+  {
+    "name":"Mega SMG TX",
+    "type":2,
+    "tier":11,
+    "flops":250,
+    "mass":50,
+    "armor":24562,
+    "cost":1061250,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T3",
+    "type":2,
+    "tier":3,
+    "flops":18,
+    "mass":7.5,
+    "armor":1084,
+    "cost":982,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T4",
+    "type":2,
+    "tier":4,
+    "flops":20,
+    "mass":7.5,
+    "armor":2003,
+    "cost":2226,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T5",
+    "type":2,
+    "tier":5,
+    "flops":22,
+    "mass":10,
+    "armor":3431,
+    "cost":4835,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T6",
+    "type":2,
+    "tier":6,
+    "flops":24,
+    "mass":10,
+    "armor":5501,
+    "cost":9534,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T7",
+    "type":2,
+    "tier":7,
+    "flops":26,
+    "mass":12.5,
+    "armor":8298,
+    "cost":17729,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T8",
+    "type":2,
+    "tier":8,
+    "flops":28,
+    "mass":12.5,
+    "armor":11809,
+    "cost":34472,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T9",
+    "type":2,
+    "tier":9,
+    "flops":30,
+    "mass":15,
+    "armor":15871,
+    "cost":61341,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher T10",
+    "type":2,
+    "tier":10,
+    "flops":32,
+    "mass":15,
+    "armor":20146,
+    "cost":111851,
+    "shape":null
+  },
+  {
+    "name":"Plasma Launcher TX-1",
+    "type":2,
+    "tier":11,
+    "flops":300,
+    "mass":15,
+    "armor":19183,
+    "cost":995125,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T4",
+    "type":2,
+    "tier":4,
+    "flops":20,
+    "mass":17.5,
+    "armor":2375,
+    "cost":2332,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T5",
+    "type":2,
+    "tier":5,
+    "flops":22,
+    "mass":20,
+    "armor":3431,
+    "cost":5066,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T6",
+    "type":2,
+    "tier":6,
+    "flops":24,
+    "mass":20,
+    "armor":2051,
+    "cost":9988,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T7",
+    "type":2,
+    "tier":7,
+    "flops":26,
+    "mass":22.5,
+    "armor":8298,
+    "cost":18574,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T8",
+    "type":2,
+    "tier":8,
+    "flops":28,
+    "mass":22.5,
+    "armor":11809,
+    "cost":36113,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T9",
+    "type":2,
+    "tier":9,
+    "flops":30,
+    "mass":25,
+    "armor":15871,
+    "cost":64262,
+    "shape":null
+  },
+  {
+    "name":"Rail Cannon T10",
+    "type":2,
+    "tier":10,
+    "flops":32,
+    "mass":25,
+    "armor":20146,
+    "cost":117178,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T2",
+    "type":2,
+    "tier":2,
+    "flops":24,
+    "mass":9,
+    "armor":163,
+    "cost":670,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T2",
+    "type":2,
+    "tier":2,
+    "flops":24,
+    "mass":9,
+    "armor":163,
+    "cost":670,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T3",
+    "type":2,
+    "tier":3,
+    "flops":28,
+    "mass":11,
+    "armor":242,
+    "cost":980,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T3",
+    "type":2,
+    "tier":3,
+    "flops":28,
+    "mass":11,
+    "armor":242,
+    "cost":980,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T4",
+    "type":2,
+    "tier":4,
+    "flops":32,
+    "mass":14,
+    "armor":347,
+    "cost":2225,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T4",
+    "type":2,
+    "tier":4,
+    "flops":32,
+    "mass":14,
+    "armor":347,
+    "cost":2225,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T5",
+    "type":2,
+    "tier":5,
+    "flops":36,
+    "mass":22,
+    "armor":475,
+    "cost":4835,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T5",
+    "type":2,
+    "tier":5,
+    "flops":36,
+    "mass":22,
+    "armor":475,
+    "cost":4835,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T6",
+    "type":2,
+    "tier":6,
+    "flops":40,
+    "mass":30,
+    "armor":622,
+    "cost":9535,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T6",
+    "type":2,
+    "tier":6,
+    "flops":40,
+    "mass":30,
+    "armor":622,
+    "cost":9535,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T7",
+    "type":2,
+    "tier":7,
+    "flops":44,
+    "mass":32,
+    "armor":778,
+    "cost":17730,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T7",
+    "type":2,
+    "tier":7,
+    "flops":44,
+    "mass":32,
+    "armor":778,
+    "cost":17730,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T8",
+    "type":2,
+    "tier":8,
+    "flops":48,
+    "mass":42,
+    "armor":926,
+    "cost":34470,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T8",
+    "type":2,
+    "tier":8,
+    "flops":48,
+    "mass":42,
+    "armor":926,
+    "cost":34470,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T9",
+    "type":2,
+    "tier":9,
+    "flops":52,
+    "mass":50,
+    "armor":1046,
+    "cost":61340,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T9",
+    "type":2,
+    "tier":9,
+    "flops":52,
+    "mass":50,
+    "armor":1046,
+    "cost":61340,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.1",
+    "type":2,
+    "tier":10,
+    "flops":22,
+    "mass":17.5,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.1",
+    "type":2,
+    "tier":10,
+    "flops":22,
+    "mass":17.5,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.2",
+    "type":2,
+    "tier":10,
+    "flops":24,
+    "mass":19.3,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.2",
+    "type":2,
+    "tier":10,
+    "flops":24,
+    "mass":19.3,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.3",
+    "type":2,
+    "tier":10,
+    "flops":28,
+    "mass":20.6,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.3",
+    "type":2,
+    "tier":10,
+    "flops":28,
+    "mass":20.6,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.4",
+    "type":2,
+    "tier":10,
+    "flops":32,
+    "mass":23.3,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.4",
+    "type":2,
+    "tier":10,
+    "flops":32,
+    "mass":23.3,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.5",
+    "type":2,
+    "tier":10,
+    "flops":36,
+    "mass":33,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.5",
+    "type":2,
+    "tier":10,
+    "flops":36,
+    "mass":33,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.6",
+    "type":2,
+    "tier":10,
+    "flops":40,
+    "mass":40.9,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.6",
+    "type":2,
+    "tier":10,
+    "flops":40,
+    "mass":40.9,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.7",
+    "type":2,
+    "tier":10,
+    "flops":44,
+    "mass":40,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.7",
+    "type":2,
+    "tier":10,
+    "flops":44,
+    "mass":40,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.8",
+    "type":2,
+    "tier":10,
+    "flops":48,
+    "mass":48.5,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.8",
+    "type":2,
+    "tier":10,
+    "flops":48,
+    "mass":48.5,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.9",
+    "type":2,
+    "tier":10,
+    "flops":52,
+    "mass":53.6,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.9",
+    "type":2,
+    "tier":10,
+    "flops":52,
+    "mass":53.6,
+    "armor":1119,
+    "cost":23970,
+    "shape":null
+  },
+  {
+    "name":"Electroplate L T10.10",
+    "type":2,
+    "tier":10,
+    "flops":56,
+    "mass":83,
+    "armor":1119,
+    "cost":111850,
+    "shape":null
+  },
+  {
+    "name":"Electroplate R T10.10",
+    "type":2,
+    "tier":10,
+    "flops":56,
+    "mass":83,
+    "armor":1119,
+    "cost":111850,
+    "shape":null
+  },
+  {
+    "name":"Mega Plate AL TX-1",
+    "type":2,
+    "tier":11,
+    "flops":200,
+    "mass":50,
+    "armor":5359,
+    "cost":435005,
+    "shape":null
+  },
+  {
+    "name":"Mega Plate AR TX-1",
+    "type":2,
+    "tier":11,
+    "flops":200,
+    "mass":50,
+    "armor":5359,
+    "cost":435005,
+    "shape":null
+  },
+  {
+    "name":"Mega Plate BL TX-1",
+    "type":2,
+    "tier":11,
+    "flops":200,
+    "mass":50,
+    "armor":5359,
+    "cost":435005,
+    "shape":null
+  },
+  {
+    "name":"Mega Plate BR TX-1",
+    "type":2,
+    "tier":11,
+    "flops":200,
+    "mass":50,
+    "armor":5359,
+    "cost":435005,
+    "shape":null
+  },
+  {
+    "name":"Nanotech Disruptor T6",
+    "type":2,
+    "tier":6,
+    "flops":24,
+    "mass":10,
+    "armor":5501,
+    "cost":9534,
+    "shape":null
+  },
+  {
+    "name":"Nanotech Disruptor T7",
+    "type":2,
+    "tier":7,
+    "flops":26,
+    "mass":10,
+    "armor":8298,
+    "cost":17729,
+    "shape":null
+  },
+  {
+    "name":"Nanotech Disruptor T8",
+    "type":2,
+    "tier":8,
+    "flops":28,
+    "mass":10,
+    "armor":11809,
+    "cost":34472,
+    "shape":null
+  },
+  {
+    "name":"Nanotech Disruptor T9",
+    "type":2,
+    "tier":9,
+    "flops":30,
+    "mass":10,
+    "armor":15871,
+    "cost":61341,
+    "shape":null
+  },
+  {
+    "name":"Nanotech Disruptor T10",
+    "type":2,
+    "tier":10,
+    "flops":32,
+    "mass":10,
+    "armor":20146,
+    "cost":111851,
+    "shape":null
+  },
+  {
+    "name":"ShoulderGuard L T5",
+    "type":2,
+    "tier":5,
+    "flops":36,
+    "mass":5,
+    "armor":402,
+    "cost":5318,
+    "shape":null
+  },
+  {
+    "name":"ShoulderGuard R T5",
+    "type":2,
+    "tier":5,
+    "flops":36,
+    "mass":5,
+    "armor":402,
+    "cost":5318,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Plate L T5",
+    "type":2,
+    "tier":5,
+    "flops":1,
+    "mass":5,
+    "armor":402,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Plate R T5",
+    "type":2,
+    "tier":5,
+    "flops":1,
+    "mass":5,
+    "armor":402,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Tesla Blade T8",
+    "type":2,
+    "tier":8,
+    "flops":22,
+    "mass":12.5,
+    "armor":4060,
+    "cost":31190,
+    "shape":null
+  },
+  {
+    "name":"Tesla Blade T9",
+    "type":2,
+    "tier":9,
+    "flops":24,
+    "mass":15,
+    "armor":5561,
+    "cost":55500,
+    "shape":null
+  },
+  {
+    "name":"Tesla Blade T10",
+    "type":2,
+    "tier":10,
+    "flops":26,
+    "mass":17.5,
+    "armor":7211,
+    "cost":710,
+    "shape":null
+  },
+  {
+    "name":"Pilot Seat",
+    "type":3,
+    "tier":0,
+    "flops":0,
+    "mass":15,
+    "armor":0,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Enemy Radar T1",
+    "type":3,
+    "tier":1,
+    "flops":10,
+    "mass":5,
+    "armor":120,
+    "cost":55,
+    "shape":null
+  },
+  {
+    "name":"Enemy Radar T5",
+    "type":3,
+    "tier":5,
+    "flops":15,
+    "mass":7.5,
+    "armor":2200,
+    "cost":1612,
+    "shape":null
+  },
+  {
+    "name":"Enemy Radar T9",
+    "type":3,
+    "tier":9,
+    "flops":20,
+    "mass":10,
+    "armor":8058,
+    "cost":25988,
+    "shape":null
+  },
+  {
+    "name":"Radar Receiver T5",
+    "type":3,
+    "tier":5,
+    "flops":26,
+    "mass":7,
+    "armor":1372,
+    "cost":3235,
+    "shape":null
+  },
+  {
+    "name":"Radar Receiver T7",
+    "type":3,
+    "tier":7,
+    "flops":28,
+    "mass":8,
+    "armor":3319,
+    "cost":12085,
+    "shape":null
+  },
+  {
+    "name":"Radar Receiver T9",
+    "type":3,
+    "tier":9,
+    "flops":30,
+    "mass":9,
+    "armor":6348,
+    "cost":42210,
+    "shape":null
+  },
+  {
+    "name":"Radar Jammer T3",
+    "type":3,
+    "tier":3,
+    "flops":24,
+    "mass":6,
+    "armor":434,
+    "cost":567,
+    "shape":null
+  },
+  {
+    "name":"Radar Jammer T5",
+    "type":3,
+    "tier":5,
+    "flops":26,
+    "mass":7,
+    "armor":1372,
+    "cost":2912,
+    "shape":null
+  },
+  {
+    "name":"Radar Jammer T7",
+    "type":3,
+    "tier":7,
+    "flops":28,
+    "mass":8,
+    "armor":3319,
+    "cost":10877,
+    "shape":null
+  },
+  {
+    "name":"Radar Jammer T9",
+    "type":3,
+    "tier":9,
+    "flops":30,
+    "mass":9,
+    "armor":6348,
+    "cost":37989,
+    "shape":null
+  },
+  {
+    "name":"Headlamp",
+    "type":3,
+    "tier":0,
+    "flops":25,
+    "mass":4,
+    "armor":0,
+    "cost":50,
+    "shape":null
+  },
+  {
+    "name":"Alignment Rectifier T1",
+    "type":3,
+    "tier":1,
+    "flops":10,
+    "mass":5,
+    "armor":180,
+    "cost":100,
+    "shape":null
+  },
+  {
+    "name":"Alignment Rectifier T5",
+    "type":3,
+    "tier":5,
+    "flops":14,
+    "mass":5,
+    "armor":2059,
+    "cost":4730,
+    "shape":null
+  },
+  {
+    "name":"Alignment Rectifier T9",
+    "type":3,
+    "tier":9,
+    "flops":18,
+    "mass":5,
+    "armor":9522,
+    "cost":60240,
+    "shape":null
+  },
+  {
+    "name":"Mega Seat TX-1",
+    "type":3,
+    "tier":11,
+    "flops":0,
+    "mass":5,
+    "armor":0,
+    "cost":1000000,
+    "shape":null
+  },
+  {
+    "name":"Vapor Trail L1",
+    "type":4,
+    "tier":0,
+    "flops":5,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Vapor Trail L2",
+    "type":4,
+    "tier":0,
+    "flops":5,
+    "mass":7.5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Robot Name Banner",
+    "type":4,
+    "tier":0,
+    "flops":10,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Badge",
+    "type":4,
+    "tier":0,
+    "flops":1,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Ear L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Ear R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Eye L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Eye R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Jaw L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Overwolf Jaw R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football FaceGuard L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football FaceGuard R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football Face L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football Face R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football Helmet L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Am. Football Helmet R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Horns L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Horns R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Face L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Face R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Beard L",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Honeydew Beard R",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  },
+  {
+    "name":"Dwarf Spike",
+    "type":4,
+    "tier":0,
+    "flops":3,
+    "mass":5,
+    "armor":10,
+    "cost":0,
+    "shape":null
+  }
+];

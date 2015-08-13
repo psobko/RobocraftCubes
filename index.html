@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <style type="text/css">
+.container {
+  width: 100%; !important
+}
+#cubeTable {
+  margin-top: 50px;
+}
+#cubeTable thead{
+  background-color: white;
+  border-spacing: 2px;
+  border-color: #e7e7e7;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+}
+#tableControls
+{
+  position: fixed;
+    right: 5px;
+    bottom: 5px;
+    /*background-color: white;*/
+    /*border: 1px solid #e7e7e7;*/
+}
+#tableControls button
+{
+  margin-left:2px;
+}
+
+.navbar-right
+{
+  float: right!important;
+}
+.navbar-right.li
+{
+  display: inline-block; !important
+}
+
+#cubeTable td:first-child {
+  pointer-events:none;
+  cursor: auto; 
+}
+
+#cubeTable td:first-child input{
+  pointer-events: all;
+
+}
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header pull-left">
+          <a class="navbar-brand" href="#">RC Cube JS Generator</a>
+        </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle glyphicon glyphicon-folder-open" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Remote</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">File</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle glyphicon glyphicon-floppy-disk" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">CSV</a></li>
+                <li><a href="#">JSON</a></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <table id="cubeTable" class="table table-striped" style="cursor: pointer;">
+
+      <thead></thead>
+
+    </table>
+<div class="hidden" id="rowControls">
+<input type="checkbox">
+</div>
+
+<div id="tableControls">
+</div>
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/editable-table-master/mindmup-editabletable.js"></script>
+    <script src="libs/stickyTableHeaders.js"></script>
+    <script type="text/javascript" src="parts.js"></script>
+    
+    <script type="text/javascript" src="generator.js"></script>
+<script type="text/javascript">
+$table = $('#cubeTable');
+
+  $($table).editableTableWidget();
+
+function addTableControl(title, action)
+{
+  $('<button/>').attr('type','button')
+                .addClass('btn btn-primary btn-xs')
+                .click(action)
+                .text(title)
+                .appendTo($('#tableControls'));
+}
+
+addTableControl('Insert Row', function(){
+  APP.table.insertRow();
+ });
+addTableControl('Delete Row', function(){ 
+  APP.table.deleteRow();
+});
+addTableControl('Delete All Selected', function(){ });
+addTableControl('Insert Col', function(){ });
+addTableControl('Delete Col', function(){ });
+
+  /*
+    TODO //////////////////////////////////////
+    - add col
+    - delete col
+    - Add move up/down
+    - Import external, import remote, import local
+    - Export feature
+    - Website
+  */
+    </script>
+  </body>
+</html>

@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Robocraft Cube Generator</title>
     <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div id="alertPlaceholder"></div>
       <div class="container">
         <div class="navbar-header pull-left">
-          <a class="navbar-brand" href="#">RC Cube JS Generator</a>
+          <a class="navbar-brand" href="#">RC Cube List Generator</a>
         </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -29,39 +29,26 @@
           </ul>
       </div>
     </nav>
-
+    <!-- Alerts -->
+    <div id="alertPlaceholder"></div>
+    <!-- Table -->
     <table id="cubeTable" class="table table-striped" style="cursor: pointer;">
       <thead></thead>
     </table>
+    <!-- Hidden Controls -->
     <div class="hidden" id="rowControls">
       <input type="checkbox">
     </div>
-
-    <div class="hidden" id="uploadBox"><input type="file" name="fileUpload" id="fileUpload" />
-</div>
-<div id="tableControls"></div>
+    <div class="hidden" id="uploadBox"><input type="file" name="fileUpload" id="fileUpload" /></div>
+    <div id="tableControls"></div>
 
     <script src="libs/jquery/dist/jquery.js"></script>
     <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="libs/editable-table-master/mindmup-editabletable.js"></script>
     <script src="libs/stickyTableHeaders.js"></script>
     <script src="libs/papa.parse/papaparse.min.js"></script>
-    <script type="text/javascript" src="parts.js"></script>
-    <script type="text/javascript" src="generator.js"></script>
+    <script type="text/javascript" src="js/generator.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
-<script type="text/javascript">
-
-  /*
-    TODO //////////////////////////////////////
-    - add col
-    - delete col
-    - slected row indicator
-    - Add move up/down
-    - Import external, import remote, import local
-    - Export feature
-    - Website
-  */
-    </script>
   </body>
 </html>

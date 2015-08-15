@@ -1,6 +1,6 @@
-/************************************
+/**
  * APP
- ************************************/
+ */
 
 var APP = APP || {}
 
@@ -9,7 +9,7 @@ APP.common = {
     //TODO: no array = intialize one
     if(array.indexOf(element) > -1)
     {
-      array.splice(array.index(element), 1);
+      array.splice(array.indexOf(element), 1);
     }
     else
     {
@@ -18,52 +18,36 @@ APP.common = {
   }
 }
 
-/************************************
+/**
  * PARSING
- ************************************/
+ */
 
 APP.parse = {
   toJSON: function(object) {
-    console.log(JSON.stringify(object));
+    return JSON.stringify(object);
   },
   toCSV : function(object) {
-    console.log(Papa.unparse(object));
+    return Papa.unparse(object);
   },
   fromJSON : function(json) {
-
+    return JSON.parse(json);
   },
   fromCSV : function(csv) {
-
+    return Papa.parse(csv);
   }
 }
 
 APP.io = {
-  exportData: function(data){},
-  displayData: function(data){},
-  importData: function(data){}
+  displayData: function(data){
+    var newWindow = window.open();
+    newWindow.location.href = "data:text/plain;charset=UTF-8," + data;
+    $(newWindow.document.body).html(data);
+  },
 }
 
-
-// var data = Papa.parse(csv);
-
-// // Convert back to CSV
-// var csv = Papa.unparse(data);
-
-// // Parse local CSV file
-// Papa.parse(file, {
-//   complete: function(results) {
-//     console.log("Finished:", results.data);
-//   }
-
-
-// var myObj = {
-//       "myrows": myRows
-//     };
-//     console.log(JSON.stringify(myObj));
-
-/************************************
+/**
  * TABLE
- ************************************/
+ */
 
 APP.table = {
   data : undefined,
@@ -96,7 +80,7 @@ APP.table = {
           {
             var td = $('<td/>').append(this.rowControls.clone()).appendTo($tr);
             td.click(function(e){
-            APP.common.toggleInArray(APP.table.selectedRows, $(this).index());
+              APP.common.toggleInArray(APP.table.selectedRows, $(this).parent());
             });
           }
           for (var x = 0; x < this.properties.length; x++) {
@@ -111,11 +95,7 @@ APP.table = {
 
         $("#cubeTable tbody").delegate('tr', 'click', function () {
           APP.table.selectedRow = $(this);
-          // $(this)
         });
-        // $("#cubeTable tbody").delegate('td', 'click', function (e) {
-          
-        // });
         // Unused validation
         // $("#cubeTable tbody").delegate('td', 'validate', function (evt, newValue) {
         //   var hasRowControls = (this.rowControls != undefined);
@@ -142,13 +122,13 @@ APP.table = {
     $("#cubeTable thead input").click(function(event){
       if($(this).prop('checked'))
       {
-        APP.table.selectedRows = this.table.find('tbody tr');
-        APP.table.find('input[type=checkbox]').prop("checked", true);
+        APP.table.selectedRows = APP.table.table.find('tbody tr');
+        APP.table.table.find('input[type=checkbox]').prop("checked", true);
       }
       else
       {
         APP.table.selectedRows = new Array();
-        APP.table.find('input[type=checkbox]').prop("checked", false);
+        APP.table.table.find('input[type=checkbox]').prop("checked", false);
       }
     });
   
@@ -180,34 +160,27 @@ APP.table = {
     this.selectedRow = undefined;
   },
   deleteSelectedRows : function() {
-    // row.remove();
-    // console.log(this.selectedRows);
+    console.log(this.selectedRows);
     for( row in this.selectedRows) {
-      // console.log(row);
-      $(row).remove();
+      $(this.selectedRows[row]).remove();
+      row = null;
     }
     this.table.find('thead input').prop('checked', false);
-    // for (var i = 0; i < indexes.length; i++) {
-    //   this.table.find('tbody').find('tr').eq(index).remove();
-    // }
     this.selectedRows = new Array();
   },
-  exportContentsToObject : function() {
-     var myRows = [];
+  toObject : function() {
+   var myRows = [];
     var headersText = [];
-    var $headers = table.find('th:not(:first-child)');
+    var $headers = this.table.find('th:not(:first-child)');
 
-    // Loop through grabbing everything
     var $rows = $("tbody tr").each(function(index) {
       $cells = $(this).find("td:not(:first-child)");
       myRows[index] = {};
 
       $cells.each(function(cellIndex) {
-      // Set the header text
       if(headersText[cellIndex] === undefined) {
         headersText[cellIndex] = $($headers[cellIndex]).text();
       }
-      // Update the row object with the header/cell combo
       myRows[index][headersText[cellIndex]] = $(this).text();
       });    
     });
@@ -215,8 +188,3 @@ APP.table = {
     return myRows;
   }
 }
-
-  
-
-
-// APP.JSON.convertTableDataToJSON($('#cubeTable'));

@@ -1,79 +1,105 @@
 APP.table.configureTable($('#cubeTable'), parts, $('#rowControls input'));
 
 APP.errorMessages = {
-  badFileType : 'Only JSON and CSV files are supported',
-
+  badFileType : 'Only JSON and CSV files are supported.',
+  unknownError: 'An unknown error has occured.'
 }
-$('#cubeTable').stickyTableHeaders();
-"use strict";
-
-$table = $('#cubeTable');
-
-$($table).editableTableWidget();
 
 function showAlert(message) {
   $('#alertPlaceholder').html('<div class="alert alert-danger alert-dismissible fade in" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><p>'+message+'</p></div>');
 }
 
-function addTableControl(title, action)
-{
-  $('<button/>').attr('type','button')
-                .addClass('btn btn-primary btn-xs')
-                .click(action)
-                .text(title)
-                .appendTo($('#tableControls'));
-}
+/**
+ * Table Config
+ */
+
+var $table = $('#cubeTable');
+$table.editableTableWidget();
+$table.stickyTableHeaders();
+var $importDropdown = $('#importDropdown');
+var $exportDropdown = $('#exportDropdown');
+var $fileUpload = $('#fileUpload');
+
 
 function addTableControls(tableControls) {
   for(var title in tableControls) {
-    addTableControl(title, tableControls[title]);
+    $('<button/>').attr('type','button')
+                  .addClass('btn btn-primary btn-xs')
+                  .click(tableControls[title])
+                  .text(title)
+                  .appendTo($('#tableControls'));
   }
 }
 
 function addDropdownControls(target, controls){
   for(var title in controls) {
-    addDropdownOption(target, title, controls[title]);
+    target.append($('<li/>')
+          .append($('<a/>').click(controls[title]).text(title)));
   }
 }
 
-function addDropdownOption(parent, title, action) {
-    parent.append($('<li/>')
-          .append($('<a/>').click(action).text(title)));
-}
-
+/**
+ * Menu 
+ */
 
 addTableControls({
-  'Insert Row':function() { APP.table.insertRow(); },
-  'Delete Row':function() { APP.table.deleteRow(); },
-  'Delete Selected':function() { APP.table.deleteSelectedRows(); },
-  'Insert Col':function(){ },
-  'Delete Col':function(){ }
+  '+ Row':function() { APP.table.insertRow(); },
+  '- Row':function() { APP.table.deleteRow(); },
+  '- Selected':function() { APP.table.deleteSelectedRows(); },
+  // '+ Col':function(){ },
+  // '- Col':function(){ }
   });
 
-var $importDropdown = $('#importDropdown');
-var $exportDropdown = $('#exportDropdown');
-var $fileUpload = $('#fileUpload');
-
 addDropdownControls($importDropdown, {
-  Default:function(){ },
-  Remote:function(){  },
+  Default:function(){ 
+    $.get('robocraftCubes.json', function(data) {
+      try {APP.table.populateTable(APP.parse.fromJSON(r.result)); }
+      catch(e){   showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError); }
+    });
+  },
+  // Remote:function(){  },
   File:function(e){ $fileUpload.click();}
 });
 
 addDropdownControls($exportDropdown, {
-  CSV:function(){  },
-  JSON:function(){  }
+  CSV:function(){ APP.io.displayData(APP.parse.toCSV(APP.table.toObject())) },
+  JSON:function(){ APP.io.displayData(APP.parse.toJSON(APP.table.toObject())) }
 });
+
+/**
+ * File Upload
+ */
 
 $fileUpload.change(function (event) {
   var file = $(this).get(0).files[0];
-  if(file.type == 'application/json') {
-
-  } else if (file.type == 'text/csv') {
-
-  } else {
-    showAlert(APP.errorMessages.badFileType);
+  var stringData;
+  try {
+    var r = new FileReader();
+    if(file.type == 'application/javascript') {
+      r.onload = function(){
+        try{
+          APP.table.populateTable(APP.parse.fromJSON(r.result));
+        }catch(e){
+          showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError);
+        }
+      }
+      stringData = r.readAsText(file);
+    } else if (file.type == 'text/csv') {
+      r.onload = function(){
+        try{
+          result = APP.parse.fromCSV(r.result);
+        }catch(e){
+          showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError);
+        }
+      }
+      stringData = r.readAsText(file);
+    } else {
+      showAlert(APP.errorMessages.badFileType);
+      return;
+    }
+  } catch (e) {
+    showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError);
   }
-  console.log(file);
 });
+
 

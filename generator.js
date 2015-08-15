@@ -1,3 +1,7 @@
+/************************************
+ * APP
+ ************************************/
+
 var APP = APP || {}
 
 APP.common = {
@@ -14,14 +18,55 @@ APP.common = {
   }
 }
 
-APP.JSON = {
-  convertObjectToJSON: function(object){
+/************************************
+ * PARSING
+ ************************************/
+
+APP.parse = {
+  toJSON: function(object) {
     console.log(JSON.stringify(object));
   },
-  // convertTableDataToJSON : function)
+  toCSV : function(object) {
+    console.log(Papa.unparse(object));
+  },
+  fromJSON : function(json) {
+
+  },
+  fromCSV : function(csv) {
+
+  }
 }
 
+APP.io = {
+  exportData: function(data){},
+  displayData: function(data){},
+  importData: function(data){}
+}
+
+
+// var data = Papa.parse(csv);
+
+// // Convert back to CSV
+// var csv = Papa.unparse(data);
+
+// // Parse local CSV file
+// Papa.parse(file, {
+//   complete: function(results) {
+//     console.log("Finished:", results.data);
+//   }
+
+
+// var myObj = {
+//       "myrows": myRows
+//     };
+//     console.log(JSON.stringify(myObj));
+
+/************************************
+ * TABLE
+ ************************************/
+
 APP.table = {
+  data : undefined,
   table : undefined,
   properties : new Array(),
   rowControls : undefined,
@@ -30,6 +75,7 @@ APP.table = {
   selectedRows: new Array(),
 
   configureTable : function(table, objects, controls){
+    this.data = objects;
     this.properties = Object.keys(objects[0]);
     this.table = table;
     this.rowControls = controls;
@@ -41,7 +87,7 @@ APP.table = {
     var hasRowControls = (this.rowControls != undefined);
     this.table.find('tbody').empty();
 
-    var tr = $('<tr/>').appendTo(this.table.find('tbody'));
+    var tr = $('<th/>').appendTo(this.table.find('tbody'));
 
     for (var i = 0; i < objects.length ; i++) {
         var item = objects[i];
@@ -82,10 +128,10 @@ APP.table = {
     var tr = $('<tr/>').appendTo(this.table.find('thead'));
     if(this.rowControls != undefined )
     {
-      $('<td/>').append(this.rowControls.clone()).appendTo(tr);
+      $('<th/>').append(this.rowControls.clone()).appendTo(tr);
     }
     for (var propertyKey in this.properties) {
-      var td = $('<td/>').attr('tabindex','1')
+      var td = $('<th/>').attr('tabindex','1')
       .text(this.properties[propertyKey])
       .appendTo(tr);
     }
@@ -93,18 +139,19 @@ APP.table = {
       APP.table.selectedCol = $(this);
     });
 
-    $("#cubeTable thead input").click(function (e) {
+    $("#cubeTable thead input").click(function(event){
       if($(this).prop('checked'))
       {
-        APP.table.selectedRows = APP.table.table.find('tbody tr');
-        APP.table.table.find('input[type=checkbox]').prop("checked", true);
+        APP.table.selectedRows = this.table.find('tbody tr');
+        APP.table.find('input[type=checkbox]').prop("checked", true);
       }
       else
       {
         APP.table.selectedRows = new Array();
-        APP.table.table.find('input[type=checkbox]').prop("checked", false);
+        APP.table.find('input[type=checkbox]').prop("checked", false);
       }
     });
+  
   },
   addColumn: function() {
     for(var tableRow in this.table.find('tr')) {
@@ -144,10 +191,32 @@ APP.table = {
     //   this.table.find('tbody').find('tr').eq(index).remove();
     // }
     this.selectedRows = new Array();
+  },
+  exportContentsToObject : function() {
+     var myRows = [];
+    var headersText = [];
+    var $headers = table.find('th:not(:first-child)');
+
+    // Loop through grabbing everything
+    var $rows = $("tbody tr").each(function(index) {
+      $cells = $(this).find("td:not(:first-child)");
+      myRows[index] = {};
+
+      $cells.each(function(cellIndex) {
+      // Set the header text
+      if(headersText[cellIndex] === undefined) {
+        headersText[cellIndex] = $($headers[cellIndex]).text();
+      }
+      // Update the row object with the header/cell combo
+      myRows[index][headersText[cellIndex]] = $(this).text();
+      });    
+    });
+
+    return myRows;
   }
 }
 
-  APP.table.configureTable($('#cubeTable'), parts, $('#rowControls input'));
+  
 
-    $('#cubeTable').stickyTableHeaders();
 
+// APP.JSON.convertTableDataToJSON($('#cubeTable'));

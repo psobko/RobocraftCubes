@@ -1,0 +1,54 @@
+.container {
+  width: 100%; !important
+}
+#cubeTable {
+  margin-top: 50px;
+}
+#cubeTable thead{
+  background-color: white;
+  border-spacing: 2px;
+  border-color: #e7e7e7;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.5);
+}
+#tableControls
+{
+  position: fixed;
+    right: 5px;
+    bottom: 5px;
+    /*background-color: white;*/
+    /*border: 1px solid #e7e7e7;*/
+}
+#tableControls button
+{
+  margin-left:2px;
+}
+
+.navbar-right
+{
+  float: right!important;
+}
+.navbar-right.li
+{
+  display: inline-block; !important
+}
+
+#cubeTable td:first-child {
+  pointer-events:none;
+  cursor: auto; 
+}
+
+#cubeTable td:first-child input{
+  pointer-events: all;
+
+}
+
+.alert
+{
+    position: fixed;
+    top: 55px;
+    z-index: 9999;
+    left: 3px;
+    right: 3px;
+}

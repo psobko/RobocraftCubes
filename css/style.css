@@ -15,10 +15,10 @@
 #tableControls
 {
   position: fixed;
-    right: 5px;
-    bottom: 5px;
-    /*background-color: white;*/
-    /*border: 1px solid #e7e7e7;*/
+  right: 5px;
+  bottom: 5px;
+  /*background-color: white;*/
+  /*border: 1px solid #e7e7e7;*/
 }
 #tableControls button
 {
@@ -46,9 +46,13 @@
 
 .alert
 {
-    position: fixed;
-    top: 55px;
-    z-index: 9999;
-    left: 3px;
-    right: 3px;
+  position: fixed;
+  top: 55px;
+  z-index: 9999;
+  left: 3px;
+  right: 3px;
+}
+
+ul.nav.navbar-nav.navbar-right {
+  display: inline-flex;
 }

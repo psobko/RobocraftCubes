@@ -160,13 +160,16 @@ APP.table = {
     this.selectedRow = undefined;
   },
   deleteSelectedRows : function() {
-    console.log(this.selectedRows);
-    for( row in this.selectedRows) {
-      $(this.selectedRows[row]).remove();
-      row = null;
-    }
+    var i = this.selectedRows.length;
+while (i--) {
+ $(this.selectedRows[i]).remove();
+}
+    // for(var row in this.selectedRows) {
+    //   $(this.selectedRows[row]).remove();
+    // }
     this.table.find('thead input').prop('checked', false);
     this.selectedRows = new Array();
+
   },
   toObject : function() {
    var myRows = [];

@@ -1,4 +1,12 @@
-APP.table.configureTable($('#cubeTable'), parts, $('#rowControls input'));
+$.get('robocraftCubes.json', function(data) {
+  $.get('robocraftCubes.json', function(data) {
+    try {
+      APP.table.configureTable($('#cubeTable'), APP.parse.fromJSON(data), $('#rowControls input'));
+    }
+    catch(e){   showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError); }
+  });
+});
+
 
 APP.errorMessages = {
   badFileType : 'Only JSON and CSV files are supported.',
@@ -53,7 +61,7 @@ addTableControls({
 addDropdownControls($importDropdown, {
   Default:function(){ 
     $.get('robocraftCubes.json', function(data) {
-      try {APP.table.populateTable(APP.parse.fromJSON(r.result)); }
+      try {APP.table.populateTable(APP.parse.fromJSON(data)); }
       catch(e){   showAlert(e['message'] ? e['message'] : APP.errorMessages.unknownError); }
     });
   },
